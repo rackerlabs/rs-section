@@ -1,7 +1,12 @@
 /* global require */
 
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
+var rimraf = require('gulp-rimraf');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+
 var karma = require('karma');
 var karmaConfig = {
   browsers: ['PhantomJS'],
@@ -13,7 +18,35 @@ var karmaConfig = {
     'src/**/*.js',
     'test/**/*.js'
   ]
-}
+};
+
+gulp.task('clean', function () {
+  'use strict';
+
+  return gulp.src('dist/**/*')
+    .pipe(rimraf());
+});
+
+gulp.task('build:concat', ['clean'], function () {
+  'use strict';
+
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(concat('rs-section.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build:min', ['clean'], function () {
+  'use strict';
+
+  return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(concat('rs-section.min.js'))
+      .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist'));
+});
 
 gulp.task('lint', function () {
   'use strict';
@@ -37,4 +70,4 @@ gulp.task('test:watch', function (done) {
   karma.server.start(karmaConfig, done);
 });
 
-gulp.task('default', ['lint', 'test']);
+gulp.task('default', ['lint', 'test', 'build:concat', 'build:min']);
