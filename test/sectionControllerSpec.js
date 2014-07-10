@@ -7,7 +7,7 @@ describe('SectionController', function () {
     scope = $rootScope.$new();
     element = angular.element();
     attributes = {};
-    uuid = function () { return 'uuid' };
+    uuid = function () { return 'uuid'; };
 
     buildController = function () {
       return $controller('SectionController', {
@@ -34,8 +34,15 @@ describe('SectionController', function () {
       expect(scope.tabindex).toBe(-1);
     });
 
+    it('is set to -1 for loading section', function () {
+      attributes.collapsible = 'loading';
+      buildController();
+
+      expect(scope.tabindex).toBe(-1);
+    });
+
     it('is set to 0 for collapsible section', function () {
-      attributes.collapsible = 'collapsible';
+      attributes.collapsible = 'collapsed';
       buildController();
 
       expect(scope.tabindex).toBe(0);

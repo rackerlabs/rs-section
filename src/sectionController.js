@@ -1,7 +1,14 @@
 angular.module('rs.section').controller('SectionController', function ($scope, $element, $attrs, uuid) {
   $scope.collapsible = 'collapsible' in $attrs;
   $scope.collapsed = $attrs.collapsible === 'collapsed';
-  $scope.tabindex = $scope.collapsible ? 0 : -1;
+  $scope.loading = $attrs.collapsible === 'loading';
+
+  if ($scope.collapsible && !$scope.loading) {
+    $scope.tabindex = 0;
+  } else {
+    $scope.tabindex = -1;
+  }
+
   $scope.id = uuid();
 
   $scope.toggle = function (e) {
