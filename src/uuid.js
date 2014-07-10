@@ -1,4 +1,6 @@
 angular.module('rs.section').factory('uuid', function () {
+  'use strict';
+
   var idCounter = 0;
 
   return function () {

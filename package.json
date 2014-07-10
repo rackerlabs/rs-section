@@ -20,9 +20,11 @@
     "url": "https://github.com/rackerlabs/rs-section/issues"
   },
   "scripts": {
-    "test": "karma start --single-run"
+    "test": "gulp lint && gulp test"
   },
   "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-jshint": "^1.7.0",
     "karma": "^0.12.16",
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4"

@@ -1,4 +1,6 @@
 angular.module('rs.section').directive('rsSection', function () {
+  'use strict';
+
   return {
     scope: {
       title: '@',
