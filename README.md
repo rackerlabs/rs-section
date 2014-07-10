@@ -1,4 +1,3 @@
-rs-section
-==========
+# rs-section
 
-Angular directive for Canon page sections.
+Angular directive for Canon sections.
