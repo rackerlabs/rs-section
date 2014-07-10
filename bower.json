@@ -1,0 +1,26 @@
+{
+  "name": "rs-section",
+  "version": "0.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/rackerlabs/rs-section",
+  "description": "Angular directive for Canon sections.",
+  "authors": [
+    "Brad Gignac <bgignac@bradgignac.com>"
+  ],
+  "main": "src/module.js",
+  "keywords": [
+    "angular",
+    "canon",
+    "rackspace"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "angular": "~1.2.19",
+    "angular-mocks": "~1.2.19"
+  }
+}

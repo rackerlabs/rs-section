@@ -1,0 +1,30 @@
+{
+  "name": "rs-section",
+  "version": "0.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/rackerlabs/rs-section",
+  "description": "Angular directive for Canon sections.",
+  "author": "Brad Gignac <bgignac@bradgignac.com>",
+  "contributors": [],
+  "main": "src/module.js",
+  "keywords": [
+    "angular",
+    "canon",
+    "rackspace"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rackerlabs/rs-section"
+  },
+  "bugs": {
+    "url": "https://github.com/rackerlabs/rs-section/issues"
+  },
+  "scripts": {
+    "test": "karma start --single-run"
+  },
+  "devDependencies": {
+    "karma": "^0.12.16",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
+}
