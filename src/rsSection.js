@@ -8,12 +8,12 @@ angular.module('rs.section').directive('rsSection', function () {
     controller: 'SectionController',
     transclude: true,
     template: '<div ng-class="{ \'rs-detail-section\': true, \'rs-collapsible-section\': collapsible, \'collapsed\': collapsed, \'expanded\': !collapsed }">\
-      <div class="rs-detail-section-header" ng-click="toggle()">\
+      <div class="rs-detail-section-header" ng-click="toggle($event)" ng-keypress="toggle($event)" tabindex="{{ tabindex }}" aria-controls="{{ id }}">\
         <div class="rs-caret" ng-if="collapsible"></div>\
         <div class="rs-detail-section-title">{{ title }}</div>\
         <div class="rs-detail-section-subtitle">{{ description }}</div>\
       </div>\
-      <div class="rs-detail-section-body" ng-transclude></div>\
+      <div class="rs-detail-section-body" id="{{ id }}" role="region" aria-expanded="{{ !collapsed }}" ng-transclude></div>\
     </div>'
   };
 });

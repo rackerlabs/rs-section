@@ -1,5 +1,5 @@
 describe('SectionController', function () {
-  var scope, element, attributes, buildController;
+  var scope, element, attributes, uuid, buildController;
 
   beforeEach(module('rs.section'));
 
@@ -7,15 +7,40 @@ describe('SectionController', function () {
     scope = $rootScope.$new();
     element = angular.element();
     attributes = {};
+    uuid = function () { return 'uuid' };
 
     buildController = function () {
       return $controller('SectionController', {
         $scope: scope,
         $element: element,
-        $attrs: attributes
+        $attrs: attributes,
+        uuid: uuid
       });
     };
   }));
+
+  describe('id', function () {
+    it('is set to unique identifier', function () {
+      buildController();
+
+      expect(scope.id).toBe('uuid');
+    });
+  });
+
+  describe('tabindex', function () {
+    it('is set to -1 for non-collapsible section', function () {
+      buildController();
+
+      expect(scope.tabindex).toBe(-1);
+    });
+
+    it('is set to 0 for collapsible section', function () {
+      attributes.collapsible = 'collapsible';
+      buildController();
+
+      expect(scope.tabindex).toBe(0);
+    });
+  });
 
   describe('collapsible', function () {
     it('is false when collapsible attribute is not provided', function () {
@@ -62,22 +87,41 @@ describe('SectionController', function () {
   });
 
   describe('toggle', function () {
-    it('changes nothing when section is not collapsible', function () {
-      buildController();
-      scope.toggle();
-
-      expect(scope.collapsed).toBe(false);
-    });
-
-    it('toggles section state when section is collapsible', function () {
+    it('toggles section when section is clicked', function () {
       attributes.collapsible = 'collapsed';
       buildController();
 
-      scope.toggle();
+      scope.toggle({ type: 'click' });
       expect(scope.collapsed).toBe(false);
 
-      scope.toggle();
+      scope.toggle({ type: 'click' });
       expect(scope.collapsed).toBe(true);
+    });
+
+    it('toggles section when space bar is pressed', function () {
+      attributes.collapsible = 'expanded';
+      buildController();
+
+      scope.toggle({ type: 'keypress', which: 32 });
+      expect(scope.collapsed).toBe(true);
+
+      scope.toggle({ type: 'keypress', which: 32 });
+      expect(scope.collapsed).toBe(false);
+    });
+
+    it('does not toggle when other key is pressed', function () {
+      attributes.collapsible = 'expanded';
+      buildController();
+
+      scope.toggle({ type: 'keypress', which: 33 });
+      expect(scope.collapsed).toBe(false);
+    });
+
+    it('does not toggle when section is not collapsible', function () {
+      buildController();
+      scope.toggle({});
+
+      expect(scope.collapsed).toBe(false);
     });
   });
 });
