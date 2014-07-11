@@ -29,7 +29,8 @@ To install with Bower, add the following line to dependencies in your bower.json
 
 ## Usage
 
-This package provides a single directive, `rs-section`, that can be used as an element.
+This package provides a single directive, `rs-section`, that can be used as an 
+element or an attribute.
 
 ```
 <rs-section title="Directive Demo" description="A description of my section." collapsible="expanded">

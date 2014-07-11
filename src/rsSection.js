@@ -6,7 +6,7 @@ angular.module('rs.section').directive('rsSection', function () {
       title: '@',
       description: '@'
     },
-    restrict: 'E',
+    restrict: 'EA',
     controller: 'SectionController',
     transclude: true,
     template: '<div ng-class="{ \'rs-detail-section\': true, \'rs-collapsible-section\': collapsible, \'collapsed\': collapsed, \'loading\': loading, \'expanded\': !collapsed && !loading }">\
