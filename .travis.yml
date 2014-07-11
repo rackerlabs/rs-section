@@ -3,4 +3,9 @@ node_js:
 - '0.10'
 - '0.11'
 before_script:
-- npm install -g bower && bower install
+- node_modules/.bin/bower install
+after_script:
+- node_modules/.bin/codeclimate < "$(find coverage -name lcov.info)"
+env:
+  global:
+    secure: coxU0onp0r3dywAMLDV14OD3HLPpRy5igACPvtwGvj45A5zcKieUMIXm0oTng+/ZwzDY2ihrtsJJlrfcFkY1G+WMlfD9JmqjxfjDwgKtU9+vdrOpdOdWSosQdtQZ+YuUcwoa5whpndmXhfJaaq97l1ZY/YInJMlWwTWvfZnXsYU=

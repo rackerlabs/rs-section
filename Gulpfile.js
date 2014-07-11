@@ -23,7 +23,7 @@ var karmaConfig = {
 gulp.task('clean', function () {
   'use strict';
 
-  return gulp.src('dist/**/*')
+  return gulp.src(['coverage/**/*', 'dist/**/*'])
     .pipe(rimraf());
 });
 
@@ -61,6 +61,10 @@ gulp.task('test', function (done) {
   'use strict';
 
   karmaConfig.singleRun = true;
+  karmaConfig.reporters.push('coverage');
+  karmaConfig.coverageReporter = { type: 'lcovonly', dir: 'coverage' };
+  karmaConfig.preprocessors = { 'src/**/*.js': ['coverage'] };
+
   karma.server.start(karmaConfig, done);
 });
 
