@@ -64,5 +64,5 @@ If the state is omitted, the section defaults to expanded. This attribute is opt
 
 ## License
 
-rs-section is releaded under the [MIT License](LICENSE).
+rs-section is released under the [MIT License](LICENSE).
 
