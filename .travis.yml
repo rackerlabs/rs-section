@@ -6,6 +6,9 @@ before_script:
 - node_modules/.bin/bower install
 after_script:
 - node_modules/.bin/codeclimate < "$(find coverage -name lcov.info)"
+notifications:
+  email: false
+  irc: chat.freenode.net#canon-dev
 env:
   global:
     secure: coxU0onp0r3dywAMLDV14OD3HLPpRy5igACPvtwGvj45A5zcKieUMIXm0oTng+/ZwzDY2ihrtsJJlrfcFkY1G+WMlfD9JmqjxfjDwgKtU9+vdrOpdOdWSosQdtQZ+YuUcwoa5whpndmXhfJaaq97l1ZY/YInJMlWwTWvfZnXsYU=
