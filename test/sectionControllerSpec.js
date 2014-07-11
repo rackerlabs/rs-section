@@ -1,4 +1,6 @@
 describe('SectionController', function () {
+  'use strict';
+
   var scope, element, attributes, uuid, buildController;
 
   beforeEach(module('rs.section'));

@@ -1,0 +1,31 @@
+{
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "freeze": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "multistr": true,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonbsp": true,
+  "nonew": true,
+  "plusplus": true,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "browser": true,
+  "globals": {
+    "module": true,
+    "inject": true,
+    "angular": true,
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "expect": true
+  }
+}
