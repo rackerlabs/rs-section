@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>rs-section</title>
+
+  <link rel="stylesheet" href="https://eafdbc63c97ce6bec9ef-b0a668e5876bef6fe25684caf71db405.ssl.cf1.rackcdn.com/v1-latest/canon.min.css">
+</head>
+<body>
+  <div class="rs-main">
+    <div class="rs-container">
+      <div class="rs-content rs-panel">
+        <rs-section title="My Section">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ut voluptate blanditiis deleniti aliquid commodi harum atque quaerat, numquam animi earum et voluptates, incidunt eaque fuga. Optio voluptatem architecto ratione.</p>
+        </rs-section>
+        <rs-section title="My Section" collapsible="expanded">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ut voluptate blanditiis deleniti aliquid commodi harum atque quaerat, numquam animi earum et voluptates, incidunt eaque fuga. Optio voluptatem architecto ratione.</p>
+        </rs-section>
+        <rs-section title="My Section" collapsible="collapsed">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ut voluptate blanditiis deleniti aliquid commodi harum atque quaerat, numquam animi earum et voluptates, incidunt eaque fuga. Optio voluptatem architecto ratione.</p>
+        </rs-section>
+        <rs-section title="My Section" collapsible="loading">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ut voluptate blanditiis deleniti aliquid commodi harum atque quaerat, numquam animi earum et voluptates, incidunt eaque fuga. Optio voluptatem architecto ratione.</p>
+        </rs-section>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="application/javascript" src="angular/angular.js"></script>
+  <script type="application/javascript" src="rs-section.js"></script>
+
+  <script type="application/javascript">
+
+  angular.module('demo', ['rs.section']);
+
+  </script>
+</body>
+</html>

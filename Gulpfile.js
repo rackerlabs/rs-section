@@ -7,6 +7,7 @@ var html2js = require('gulp-ng-html2js');
 var rimraf = require('gulp-rimraf');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var webserver = require('gulp-webserver');
 var merge = require('merge-stream');
 
 var karma = require('karma');
@@ -82,6 +83,15 @@ gulp.task('test:watch', function (done) {
   'use strict';
 
   karma.server.start(karmaConfig, done);
+});
+
+gulp.task('server', ['build:concat', 'build:min'], function () {
+  'use strict';
+
+  gulp.watch(['src/**/*'], ['build:concat', 'build:min']);
+
+  return gulp.src(['bower_components', 'dist', 'example'])
+    .pipe(webserver({ livereload: true }));
 });
 
 gulp.task('default', ['lint', 'test', 'build:concat', 'build:min']);
