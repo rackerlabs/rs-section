@@ -1,24 +1,7 @@
 {
   "name": "rs-section",
   "version": "0.0.0",
-  "license": "MIT",
-  "homepage": "https://github.com/rackerlabs/rs-section",
-  "description": "Angular directive for Canon sections.",
-  "author": "Brad Gignac <bgignac@bradgignac.com>",
-  "contributors": [],
-  "main": "src/module.js",
-  "keywords": [
-    "angular",
-    "canon",
-    "rackspace"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rackerlabs/rs-section"
-  },
-  "bugs": {
-    "url": "https://github.com/rackerlabs/rs-section/issues"
-  },
+  "private": true,
   "scripts": {
     "test": "gulp lint && gulp test"
   },
