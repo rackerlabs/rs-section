@@ -63,7 +63,7 @@ gulp.task('lint', function () {
 
   return gulp.src(['src/javascripts/**/*.js', 'test/**/*.js', 'Gulpfile.js', 'karma.conf.js'])
     .pipe(jshint())
-    .pipe(jshint.reporter('default'))
+    .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
 });
 
