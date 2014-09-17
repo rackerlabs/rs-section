@@ -17,8 +17,8 @@
     "url": "https://github.com/rackerlabs/rs-section"
   },
   "dependencies": {
-    "angular": "~1.2.19",
-    "angular-mocks": "~1.2.19"
+    "angular": "~1.2",
+    "angular-mocks": "~1.2"
   },
   "ignore": [
     "**/.*",
