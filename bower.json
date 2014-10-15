@@ -1,6 +1,6 @@
 {
   "name": "rs-section",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "homepage": "https://github.com/rackerlabs/rs-section",
   "description": "Angular directive for Canon sections.",
@@ -17,8 +17,8 @@
     "url": "https://github.com/rackerlabs/rs-section"
   },
   "dependencies": {
-    "angular": "~1.2",
-    "angular-mocks": "~1.2"
+    "angular": "~1.3",
+    "angular-mocks": "~1.3"
   },
   "ignore": [
     "**/.*",
