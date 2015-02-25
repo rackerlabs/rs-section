@@ -4,7 +4,8 @@ angular.module('rs.section').directive('rsSection', function () {
   return {
     scope: {
       title: '@',
-      description: '@'
+      description: '@',
+      collapsible: '@'
     },
     restrict: 'EA',
     controller: 'SectionController',
