@@ -1,11 +1,12 @@
 {
   "name": "rs-section",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "homepage": "https://github.com/rackerlabs/rs-section",
   "description": "Angular directive for Canon sections.",
   "authors": [
-    "Brad Gignac <bgignac@bradgignac.com>"
+    "Brad Gignac <bgignac@bradgignac.com>",
+    "Eddy Hernandez <edward.d.hernandez@gmail.com>"
   ],
   "keywords": [
     "angular",

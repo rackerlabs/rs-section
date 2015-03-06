@@ -39,7 +39,8 @@ angular.module('rs.section').directive('rsSection', function () {
   return {
     scope: {
       title: '@',
-      description: '@'
+      description: '@',
+      collapsible: '@'
     },
     restrict: 'EA',
     controller: 'SectionController',
@@ -48,30 +49,32 @@ angular.module('rs.section').directive('rsSection', function () {
   };
 });
 
-angular.module('rs.section').controller('SectionController', ["$scope", "$element", "$attrs", "uuid", function ($scope, $element, $attrs, uuid) {
+angular.module('rs.section').controller('SectionController', ["$scope", "uuid", function ($scope, uuid) {
   'use strict';
 
-  $scope.collapsible = 'collapsible' in $attrs;
-  $scope.collapsed = $attrs.collapsible === 'collapsed';
-  $scope.loading = $attrs.collapsible === 'loading';
-
-  if ($scope.collapsible && !$scope.loading) {
-    $scope.tabindex = 0;
-  } else {
-    $scope.tabindex = -1;
-  }
-
+  $scope.collapsed = false;
+  $scope.tabindex = -1;
   $scope.id = uuid();
-
   $scope.toggle = function (e) {
     if (e.type === 'keypress' && e.which !== 32) {
       return;
     }
 
-    if ($scope.collapsible) {
+    if ($scope.collapsible && $scope.collapsible !== 'loading') {
       $scope.collapsed = !$scope.collapsed;
     }
   };
+
+  $scope.$watch('collapsible', function () {
+    $scope.collapsed = $scope.collapsible === 'collapsed';
+    $scope.loading = $scope.collapsible === 'loading';
+
+    if ($scope.collapsible && !$scope.loading) {
+      $scope.tabindex = 0;
+    } else {
+      $scope.tabindex = -1;
+    }
+  });
 }]);
 
 angular.module('rs.section').factory('uuid', function () {
